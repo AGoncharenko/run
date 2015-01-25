@@ -225,7 +225,6 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.43.0, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.2, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fitvidsjs_rails (v1.1.3, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.0, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="heroku (v3.23.3, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="heroku-api (v0.3.22, RVM: ruby-2.2.0-preview1 [run]) [gem]" level="application" />
