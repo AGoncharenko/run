@@ -8,18 +8,25 @@
 </head>
 <body <%= "class=#{@bg}" if @bg %>>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <%= render 'shared/menu_list' %>
 
   <div class="page-wrap">
 
-    <header class="main-header">
-      <%= link_to '', '#main-nav', class: 'open-menu menu-icon' %>
-      <%= link_to '', '#', class: 'close-menu menu-icon' %>
-      <%= link_to '', new_user_registration_path, class: 'login-icon' %>
-    </header>
+  <header class="main-header">
+    <%= link_to '', '#', class: 'open-close-menu' %>
+    <%= link_to '', new_user_registration_path, class: 'login-icon' %>
+  </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <%= yield %>
   </div>
 </body>
 </html>
+<script>
+  $( document ).ready(function() {
+    $('.open-close-menu').click(function(e){
+      e.preventDefault();
+      $('.main-nav').animate({width:'toggle'},350);
+    })
+  });
+</script>
