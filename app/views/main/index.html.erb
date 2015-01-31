@@ -1,24 +1,10 @@
-<%= render 'menu_list' %>
-
-<div class="page-wrap">
-
-  <header class="main-header">
-    <%= link_to '', '#main-nav', class: 'open-menu menu-icon' %>
-    <%= link_to '', '#', class: 'close-menu menu-icon' %>
-    <%= link_to '', new_user_registration_path, class: 'login-icon' %>
-  </header>
-
   <div class="content">
     <div id="P2" class="player video-container" data-property="{videoURL:'V6_85cSOIcE',containment:'#P2',autoPlay:true, mute:true, startAt:0, opacity:1}"></div>
-    <%= link_to 'Побежали', '#', class: 'run-button' %>
-
+    <%= link_to 'Побежали', where_path, class: 'run-button' %>
   </div>
 
-</div>
-
-<script type="text/javascript" charset="utf-8">
+  <script type="text/javascript" charset="utf-8">
   $(function(){
     $(".player").YTPlayer();
-    $(".player").fitVids();
   });
 </script>
