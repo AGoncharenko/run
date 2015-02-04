@@ -9,6 +9,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: auto;
+  overflow-x: scroll;
   &.where {
     background: asset_url('background_where.jpg') no-repeat top center fixed;
   }
@@ -17,8 +19,13 @@ body {
   box-sizing: border-box;
 }
 
-html, body { min-height: 100%; }
+html, body
+  { min-height: 100%;
+
+  }
 a { text-decoration: none; }
+
+
 
 .main-header {
   color: black;
@@ -42,17 +49,21 @@ a { text-decoration: none; }
 
 .main-nav {
   display: none;
-  width: 400px;
-  height: 100%;
+  width: 280px;
+  height: 500px;
   background-color: #808080;
   float: left;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .content {
-  width: 90%;
-  margin: auto;
+//  width: 100%;
+  margin: 0;
   text-align: center;
+  float: center;
+
 }
 .run-button {
   border-top: 1px solid #96d1f8;
@@ -76,7 +87,8 @@ a { text-decoration: none; }
   vertical-align: middle;
   display: block;
   float: left;
-  margin:11%;
+
+  margin:140px 140px;
   &:hover {
     border-top-color: #28597a;
     background: #28597a;
@@ -93,3 +105,12 @@ a { text-decoration: none; }
   display: block;
   float: left;
 }
+
+.where-button {
+  vertical-align: center;
+  float: left;
+  margin-left: 15%;
+  margin-top: -20px;
+  overflow: auto;
+//  position: static;
+ }
