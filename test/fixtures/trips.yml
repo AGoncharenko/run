@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment: 2015-02-04
+  track_id: 1
+
+two:
+  appointment: 2015-02-04
+  track_id: 1

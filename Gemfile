@@ -13,6 +13,8 @@ gem 'uglifier', '>= 1.3.0'                            # Use Uglifier as compress
 gem 'coffee-rails', '~> 4.1.0'                        # Use CoffeeScript for .coffee assets and views
 gem 'jquery-rails'
 gem 'turbolinks'                                      # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'gmaps4rails', '~> 2.1.2'                         # Enables easy Google map + overlays creation.
+gem 'underscore-rails', '~> 1.7.0'                    # underscore.js asset pipeline provider/wrapper
 
 group :development, :test do
   gem 'web-console', '~> 2.0'                         # Access an IRB console on exception pages or by using <%= console %> in views
