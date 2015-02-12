@@ -3,8 +3,14 @@
 <%= image_tag 'runner.png' %>
 <div class="where-button">
   <%= link_to 'Выбрать готовый маршрут', '#', class: 'btn btn-primary btn-lg' %>
+  <ul class="tracks">
+  <% @tracks.each do |track| %>
+    <li><%= link_to track.name, '', class: 'track_link', data: {id: track.id} %></li>
+  <% end %>
+  </ul>
   <%= link_to 'Построить маршрут', '#', class: 'btn btn-primary btn-lg' %>
 </div>
+<h1 class="track-name"></h1>
 <div style='width: 800px;'>
   <div id="directions" style='width: 800px; height: 400px;'></div>
 </div>
@@ -12,13 +18,20 @@
   var directionsDisplay = new google.maps.DirectionsRenderer();
   var directionsService = new google.maps.DirectionsService();
 
-  function calcRoute() {
-    var origin      = new google.maps.LatLng(47.849503, 35.143528);
-    var destination = new google.maps.LatLng(50.450009, 30.540256);
+  function calcRoute(track) {
+    var origin      = new google.maps.LatLng(track.origin.lat, track.origin.lng);
+    var destination = new google.maps.LatLng(track.destination.lat, track.destination.lng);
+    var waypoints = [];
+    if (track.waypoints.length > 0) {
+      $.each(track.waypoints, function( index, value ) {
+        waypoints.push({location: new google.maps.LatLng(value.lat, value.lng), stopover:true})
+      });
+    }
+    $('.track-name').html(track.name);
     var request = {
       origin:      origin,
       destination: destination,
-      waypoints: [{location: new google.maps.LatLng(48.457831, 35.044651), stopover:true}],
+      waypoints: waypoints,
       travelMode:  google.maps.TravelMode.WALKING
     };
     directionsService.route(request, function(response, status) {
@@ -27,11 +40,31 @@
       }
     });
   }
+  var track = <%= raw  @track.to_json %>;
+  var default_track = {origin: {lat: 50.344886, lng:30.487544}, destination: {lat: 50.333820, lng: 30.499732}, waypoints: [{lat: 50.346529, lng: 30.510718}, {lat: 50.337272, lng: 30.507714}], name: 'Пробежка'};
 
-  calcRoute();
+  calcRoute(track || default_track );
 
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'directions'}}, function(){
     directionsDisplay.setMap(handler.getMap());
   });
+
+  $('.track_link').click(function(e) {
+    e.preventDefault();
+    var track_id = $(e.target).data('id');
+    $.ajax({
+      type: "GET",
+      url: "/tracks/"+track_id,
+      success: function(data)
+      {
+        calcRoute(data.track);
+        handler.buildMap({ internal: {id: 'directions'}}, function(){
+          directionsDisplay.setMap(handler.getMap());
+        });
+        $('.track-name').html(data.track.name);
+      }
+    });
+
+  })
 </script>

@@ -9,6 +9,7 @@ class MainController < ApplicationController
 
   def where
     @bg = 'where'
-
+    @tracks = Track.all
+    @track = Track.first.try(:attrs)
   end
 end
