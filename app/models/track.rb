@@ -5,6 +5,7 @@ class Track < ActiveRecord::Base
   
   def attrs
     return {
+        id: self.id,
         name: self.name,
         origin: {lat: eval(self.origin)[:lat], lng: eval(self.origin)[:lng]},
         destination: {lat: eval(self.destination)[:lat], lng: eval(self.destination)[:lng]},

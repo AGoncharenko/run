@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'main/index'
   get 'where/:slug' => 'main#where', as: :where
+  get 'build_track/:slug' => 'main#build_track', as: :build_track
+  get 'when/:slug' => 'main#when', as: :when
   post 'create_run' => 'main#create_run'
 
   # The priority is based upon order of creation: first created -> highest priority.

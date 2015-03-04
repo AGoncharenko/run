@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require moment
+//= require fullcalendar
+//= require bootstrap.min
+//= require bootstrap-timepicker
 //= require_tree .

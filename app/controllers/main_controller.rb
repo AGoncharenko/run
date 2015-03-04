@@ -9,7 +9,20 @@ class MainController < ApplicationController
 
   def where
     @bg = 'where'
+    @trip = Trip.find_by(slug: params[:slug])
     @tracks = Track.all
     @track = Track.first.try(:attrs)
+  end
+
+  # def build_track
+  #   @bg = 'where'
+  #   @tracks = Track.all
+  #   @track = Track.first.try(:attrs)
+  # end
+
+  def when
+    @bg = 'where'
+    @trip = Trip.find_by(slug: params[:slug])
+    @trip.update(track_id: params[:track_id])
   end
 end

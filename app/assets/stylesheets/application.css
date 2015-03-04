@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
+ *= require bootstrap.min
+ *= require bootstrap-timepicker
  */

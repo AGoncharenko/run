@@ -1,0 +1,18 @@
+.map-bloc {
+    width: 800px;
+    margin-left: 40%;
+  #directions {
+    width: 800px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+    .map-bloc {
+      width: 400px;
+      #directions {
+        width: 400px;
+        height: 200px;
+      }
+    }
+}
