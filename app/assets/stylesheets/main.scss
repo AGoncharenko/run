@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
 }
 
-html, body
+html, body, .page-wrap
   { min-height: 100%;
 
   }
@@ -56,6 +56,8 @@ a { text-decoration: none; }
   float: left;
   list-style-type: none;
   margin-top: -10px;
+  margin-left: auto;
+  padding: 15px 0 0 30px;
 }
 
 .content {
@@ -78,4 +80,17 @@ a { text-decoration: none; }
   margin-top: -20px;
   overflow: auto;
 //  position: static;
+}
+
+.goForward {
+  float: right;
+  a {
+    width: auto;
+    height: auto;
+    bg-image: asset url ('foot_right.png');
+  }
+}
+
+.page-wrap {
+  position: relative;
 }

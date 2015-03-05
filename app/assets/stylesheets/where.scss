@@ -1,6 +1,8 @@
 .map-bloc {
+//  position: absolute;
     width: 800px;
-    margin-left: 40%;
+//    margin-left: 100%;
+//    margin-top: -60%;
   #directions {
     width: 800px;
     height: 400px;
@@ -15,4 +17,17 @@
         height: 200px;
       }
     }
+}
+
+#selectRout {
+//  position: relative;
+  width: 500px;
+  top: 10px;
+  margin: 10px auto;
+}
+
+#runner {
+//  display: ;
+  position: relative;
+  margin-top: 15%;
 }
