@@ -84,11 +84,10 @@ a { text-decoration: none; }
 
 .goForward {
   float: right;
-  a {
-    width: auto;
-    height: auto;
-    bg-image: asset url ('foot_right.png');
-  }
+  width: 80px;
+  height: 80px;
+  background-image: url('foot_right.png');
+  background-size: 80px 80px;
 }
 
 .page-wrap {
