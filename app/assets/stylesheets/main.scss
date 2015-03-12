@@ -13,6 +13,10 @@ body {
   &.where {
     background: asset_url('background_where.jpg') no-repeat top center fixed;
   }
+
+  &.entry {
+    background: asset_url('background_entry.jpg') no-repeat top center fixed;
+  }
 }
 * {
   box-sizing: border-box;

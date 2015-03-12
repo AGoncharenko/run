@@ -2,6 +2,16 @@ class MainController < ApplicationController
   def index
   end
 
+  def entry
+    @bg = 'entry'
+    # if user_signed_in?
+      # redirect_to root_path
+    # else
+      @user = User.new
+    # end
+
+  end
+
   def create_run
     @trip = Trip.create
     redirect_to where_path(@trip.slug)

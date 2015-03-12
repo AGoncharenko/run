@@ -17,7 +17,11 @@
           <header class="main-header">
             <%= link_to '', '#', class: 'open-close-menu' %>
             <div id="signUp">
-                <%= link_to '', new_user_registration_path, class: 'login-icon' %>
+              <% if user_signed_in? %>
+                <%= link_to '', destroy_user_session_path, :method => :delete, :data => {:confirm => 'Вы уверены, что хотите завершить сессию?'}, class: 'login-icon' %>
+              <% else %>
+                <%= link_to '', entry_path, class: 'login-icon' %>
+              <% end %>
             </div>
           </header>
             <p class="notice"><%= notice %></p>
