@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Run</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <head>
+      <title>Run</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
 
-</head>
-<body <%= "class=#{@bg}" if @bg %>>
+    <body <%= "class=#{@bg}" if @bg %>>
 
-  <%= render 'shared/menu_list' %>
+      <%= render 'shared/menu_list' %>
 
-  <div class="page-wrap">
+      <div class="page-wrap">
 
-  <header class="main-header">
-    <%= link_to '', '#', class: 'open-close-menu' %>
-    <%= link_to '', new_user_registration_path, class: 'login-icon' %>
-  </header>
-    <p class="notice"><%= notice %></p>
-    <!--<p class="alert"><%= alert %></p>-->
-  <%= yield %>
-  </div>
-</body>
+          <header class="main-header">
+            <%= link_to '', '#', class: 'open-close-menu' %>
+            <div id="signUp">
+                <%= link_to '', new_user_registration_path, class: 'login-icon' %>
+            </div>
+          </header>
+            <p class="notice"><%= notice %></p>
+            <!--<p class="alert"><%= alert %></p>-->
+          <%= yield %>
+      </div>
+
+    </body>
 </html>
+
 <script>
   $( document ).ready(function() {
     $('.open-close-menu').click(function(e){

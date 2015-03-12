@@ -10,8 +10,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: auto;
-  overflow-x: scroll;
   &.where {
     background: asset_url('background_where.jpg') no-repeat top center fixed;
   }
@@ -20,10 +18,10 @@ body {
   box-sizing: border-box;
 }
 
-html, body, .page-wrap
-  { min-height: 100%;
-
-  }
+html, body, .page-wrap {
+  height: auto;
+  overflow-x: hidden;
+}
 a { text-decoration: none; }
 
 
@@ -61,11 +59,11 @@ a { text-decoration: none; }
 }
 
 .content {
-  width: 100%;
-  margin: 0;
+  width: 80%;
+  margin: 10%;
   text-align: center;
-  float: center;
-}
+  }
+
 .player {
   width: 50%;
   min-height: 395px;
@@ -73,23 +71,37 @@ a { text-decoration: none; }
   float: left;
 }
 
-.where-button {
-  vertical-align: center;
-  float: left;
-  margin-left: 15%;
-  margin-top: -20px;
-  overflow: auto;
-//  position: static;
-}
-
 .goForward {
   float: right;
+  margin-bottom: 20px;
+  margin-right: 10px;
   width: 80px;
-  height: 80px;
+  height: 60px;
   background-image: url('foot_right.png');
-  background-size: 80px 80px;
+  background-size: 80px 60px;
+  background-repeat: no-repeat;
 }
 
-.page-wrap {
-  position: relative;
+.goBack {
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 80px;
+  height: 60px;
+  background-image: url('foot_left.png');
+  background-size: 80px 60px;
+  background-repeat: no-repeat
 }
+#b3 {
+  width: 100%;
+//  margin-top: 20%;
+}
+
+#runButton {
+margin-top: 13%;
+  padding: 30px 50px;
+  font: bold 200% "Helvetica Neue",Helvetica,Tahoma, Arial,sans-serif;
+}
+//  .page-wrap {
+//      position: relative;
+//  }
