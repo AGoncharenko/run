@@ -4,11 +4,11 @@ class MainController < ApplicationController
 
   def entry
     @bg = 'entry'
-    # if user_signed_in?
-      # redirect_to root_path
-    # else
+    if user_signed_in?
+      redirect_to root_path
+    else
       @user = User.new
-    # end
+    end
 
   end
 
@@ -24,6 +24,18 @@ class MainController < ApplicationController
     @track = Track.first.try(:attrs)
   end
 
+  def update_where
+    @trip = Trip.find(params[:id])
+    respond_to do |format|
+      if @trip.update(track_id: params[:trip][:track_id])
+        format.html { redirect_to when_path(@trip.slug) }
+      else
+        format.html { render action: 'where' }
+        format.json { render json: @trip.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # def build_track
   #   @bg = 'where'
   #   @tracks = Track.all
@@ -33,6 +45,11 @@ class MainController < ApplicationController
   def when
     @bg = 'where'
     @trip = Trip.find_by(slug: params[:slug])
-    @trip.update(track_id: params[:track_id])
+  end
+
+  def update_when
+    @trip = Trip.find(params[:id])
+    @trip.update(appointment: params[:trip][:appointment])
+    redirect_to who_path(@trip.slug)
   end
 end

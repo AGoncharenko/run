@@ -20,8 +20,11 @@
     </div>
   </div>
 
-<%= link_to "#", root_path, class: 'goBack' %>
-<%= link_to "#", when_path(@trip.slug, track_id: @track[:id]), class: 'goForward'  %>
+<%= link_to "", root_path, class: 'goBack' %>
+<%= form_for(@trip, url: update_where_path(@trip), method: :patch) do |f| %>
+  <%= f.hidden_field :track_id, value: @track[:id]  %>
+  <%= f.submit '', class: 'goForward' %>
+<% end %>
 
 <script>
   var track_id;
@@ -73,12 +76,7 @@
           directionsDisplay.setMap(handler.getMap());
         });
         $('.track-name').html(data.track.name);
-        var href = $('.forward').attr('href');
-
-        if(href) {
-          href = '<%= when_path(@trip.slug) %>' + '?track_id='+track_id;
-          $('.forward').attr('href', href);
-        }
+        $('#trip_track_id').val(track_id);
       }
     });
   });

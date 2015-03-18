@@ -1,5 +1,17 @@
-.calendar {
-  width: 50%;
-  float: right;
-  background: #f3f7aa;
+.xdsoft_datetimepicker {
+  width: 60%;
+  height: 600px;
+  .xdsoft_datepicker {
+    width: 80%!important;
+    height: 95%!important;
+    .xdsoft_calendar {
+
+      table {
+        height: 100%!important;
+      }
+    }
+  }
+  .xdsoft_timepicker {
+    width: 18%!important;
+  }
 }
