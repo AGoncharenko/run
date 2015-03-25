@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding: 0;
+
   background: asset_url('bg.jpg') no-repeat top center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -79,7 +80,7 @@ a { text-decoration: none; }
   float: right;
   margin-bottom: 20px;
   margin-right: 10px;
-  width: 80px;
+  width: 80px!important;
   height: 60px;
   background-image: url('foot_right.png');
   background-size: 80px 60px;

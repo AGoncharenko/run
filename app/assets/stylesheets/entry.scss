@@ -1,3 +1,25 @@
+//body {
+//  background: asset_url('background_entry.jpg') no-repeat top center fixed;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+
+//}
+
+//img.bg {
+//  min-height: 100%;
+//  min-width: 1024px;
+//
+//  width: 100%;
+//  height: auto;
+//
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//}
+
+
 .entry-link {
   display: inline-block;
   margin: 30px;
@@ -13,3 +35,10 @@
 .signup-link {
   background-image: url('registration_icon_large.png');
 }
+
+#entryBlock {
+  max-width: 820;
+  display: inline-block;
+  margin: auto 23%;
+  position: relative;
+  }
