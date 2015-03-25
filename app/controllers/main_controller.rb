@@ -8,6 +8,7 @@ class MainController < ApplicationController
       redirect_to root_path
     else
       @user = User.new
+      resource = @user
     end
 
   end

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   get 'main/index'
   get 'where/:slug' => 'main#where', as: :where
   patch 'update_where/:id' => 'main#update_where', as: :update_where
@@ -12,4 +11,6 @@ Rails.application.routes.draw do
   get 'entry' => 'main#entry', as: :entry
   root 'main#index'
   resources :tracks
+
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 end

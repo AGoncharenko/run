@@ -37,8 +37,12 @@
 }
 
 #entryBlock {
-  max-width: 820;
+  max-width: 820px;
   display: inline-block;
   margin: auto 23%;
   position: relative;
   }
+
+.modal.fade {
+  top: -100%;
+}

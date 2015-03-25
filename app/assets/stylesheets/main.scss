@@ -85,6 +85,8 @@ a { text-decoration: none; }
   background-image: url('foot_right.png');
   background-size: 80px 60px;
   background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
 }
 
 .goBack {
@@ -110,3 +112,7 @@ margin-top: 13%;
 //  .page-wrap {
 //      position: relative;
 //  }
+
+.no-display {
+  display: none;
+}

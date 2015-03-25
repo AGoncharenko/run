@@ -1,20 +1,29 @@
-<h2>Вход</h2>
-<div class="entry-form">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+<%= form_for(@user, url: session_path(@user), remote: true, html: {id: 'signin-form'}) do |f| %>
+<div class="modal fade" id="signin-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Вход</h4>
+      </div>
+      <div class="modal-body">
+        <div class="signin-error"></div>
+      <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <%= link_to "Забыл пароль?", new_password_path(@user) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
     </div>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-  <% end %>
-  <%= link_to "Забыл пароль?", new_password_path(resource_name) %>
+  </div>
 </div>
-<%= link_to '', new_user_registration_path, class: 'entry-link signup-link' %>
+<% end %>

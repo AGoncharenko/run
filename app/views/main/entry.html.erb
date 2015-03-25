@@ -1,4 +1,26 @@
+<%= render template: 'users/sessions/new' %>
 <div id="entryBlock">
-  <%= link_to '', new_user_session_path, class: 'entry-link signin-link' %>
-  <%= link_to '', new_user_registration_path, class: 'entry-link signup-link' %>
+  <%= link_to '', '',  class: 'entry-link signin-link', id: "signin" %>
+  <%= link_to '', '', class: 'entry-link signup-link', id: 'signup' %>
 </div>
+<%= render template: 'users/registrations/new' %>
+
+<script>
+  $('.signin-link, .signup-link').click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr('id')
+    $('#'+id+'-modal').modal('show');
+  })
+  $(document).ready(function () {
+    $("#signin-form").on("ajax:success", function (e, data, status, xhr) {
+      window.location = "<%= root_path %>";
+    }).on("ajax:error", function (e, xhr, status, error) {
+      $('.signin-error').html(xhr.responseText);
+    })
+    $("#signup-form").on("ajax:success", function (e, data, status, xhr) {
+      window.location = "<%= root_path %>";
+    }).on("ajax:error", function (e, xhr, status, error) {
+      $('.signup-error').html(xhr.responseText);
+    })
+  })
+</script>
