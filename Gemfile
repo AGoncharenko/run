@@ -8,6 +8,7 @@ gem "unicorn-rails", "~> 2.2.0"                       # Makes unicorn the defaul
 gem "pg", "~> 0.18.1"                                 # Postgres gem
 gem "heroku", "~> 3.23.3"                             # Heroku hosting
 gem "devise", "~> 3.4.1"                              # User authentication for users
+gem 'omniauth-facebook', '~> 2.0.1'                   # Facebook OAuth2 Strategy for OmniAuth
 gem 'sass-rails', '~> 5.0'                            # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0'                            # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.1.0'                        # Use CoffeeScript for .coffee assets and views
