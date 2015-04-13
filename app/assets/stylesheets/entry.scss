@@ -1,47 +1,30 @@
-//body {
-//  background: asset_url('background_entry.jpg') no-repeat top center fixed;
-//  -webkit-background-size: cover;
-//  -moz-background-size: cover;
-//  -o-background-size: cover;
-//  background-size: cover;
-
-//}
-
-//img.bg {
-//  min-height: 100%;
-//  min-width: 1024px;
-//
-//  width: 100%;
-//  height: auto;
-//
-//  position: fixed;
-//  top: 0;
-//  left: 0;
-//}
-
-
-.entry-link {
-  display: inline-block;
-  margin: 30px;
-  width: 400px;
-  height: 400px;
-}
-.entry-form {
-  display: inline-block;
-}
-.signin-link {
-  background-image: url('login_icon_large.png');
-}
-.signup-link {
-  background-image: url('registration_icon_large.png');
-}
 
 #entryBlock {
-  max-width: 820px;
-  display: inline-block;
-  margin: auto 23%;
   position: relative;
-  }
+  width: 900px;
+  height: 400px;
+  display: block;
+  margin: 10% 23%;
+  position: relative;
+}
+
+#signin, #signup {
+  display: block;
+  width: 400px;
+  height: 400px;
+  float: left;
+}
+
+.signin-link {
+  background-image: url('registration_icon_large.png');
+  outline: 0px solid black;
+}
+.signup-link {
+  background-image: url('login_icon_large.png');
+  outline: 0px solid black;
+  margin-left: 100px;
+}
+
 
 .modal.fade {
   top: -100%;

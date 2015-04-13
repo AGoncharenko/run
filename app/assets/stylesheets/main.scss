@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
 
-  background: asset_url('bg.jpg') no-repeat top center fixed;
+  background: asset_url('bg.jpg') no-repeat bottom center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -16,7 +16,7 @@ body {
   }
 
   &.entry {
-    background: asset_url('background_entry.jpg') no-repeat top center fixed;
+    background: asset_url('background_entry.jpg') no-repeat bottom center fixed;
   }
 }
 * {
@@ -24,8 +24,9 @@ body {
 }
 
 html, body, .page-wrap {
-  height: auto;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
+  outline: 1px solid red;
 }
 a { text-decoration: none; }
 
@@ -99,6 +100,13 @@ a { text-decoration: none; }
   background-size: 80px 60px;
   background-repeat: no-repeat
 }
+
+.buttons {
+  bottom: 10px;
+  height: 60px;
+  outline: 1px solid red;
+}
+
 #b3 {
   width: 100%;
 //  margin-top: 20%;
@@ -115,4 +123,8 @@ margin-top: 13%;
 
 .no-display {
   display: none;
+}
+
+.clear {
+  clear: both;
 }
