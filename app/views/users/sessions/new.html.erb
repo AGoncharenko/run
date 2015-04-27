@@ -17,8 +17,8 @@
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
-        <%= link_to "Забыл пароль?", new_password_path(@user) %>
-        <%= link_to "Вход через Facebook", user_omniauth_authorize_path(:facebook) %>
+        <%= link_to "Забыли пароль?", new_password_path(@user), id:"forgot-pass" %>
+        <%= link_to "Вход через Facebook", user_omniauth_authorize_path(:facebook),  id:"fb-signin" %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
