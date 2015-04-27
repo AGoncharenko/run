@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   patch 'update_who/:slug' => 'main#update_who', as: :update_who
   post 'create_run' => 'main#create_run'
   get 'entry' => 'main#entry', as: :entry
+  get "/contacts/:importer/callback" => "main#import_contacts"
+  get "/oauth2callback" => "main#import_contacts_callback"
+
   root 'main#index'
   resources :tracks
 

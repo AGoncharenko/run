@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
       user.uid        = auth[:uid]
       user.first_name = auth[:first_name]
       user.last_name  = auth[:last_name]
+      user.gender     = auth[:gender]
+      user.date_of_birth     = auth[:date_of_birth]
 
       if user.new_record?
         user.email    = auth[:email]

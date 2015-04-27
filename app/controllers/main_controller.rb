@@ -53,4 +53,24 @@ class MainController < ApplicationController
     @trip.update(appointment: params[:trip][:appointment])
     redirect_to who_path(@trip.slug)
   end
+
+  def who
+    # logger.info "session: #{session[:credentials]['token']}\n"
+    # @graph = Koala::Facebook::API.new(session[:credentials]['token'])
+    # logger.info "@friends: #{@graph.inspect}\n\n\n"
+    # @friends = @graph.get_connections("me", "friends")
+    # logger.info "@friends: #{@friends.inspect}\n\n\n"
+  end
+
+  def import_contacts
+    @contacts = request.env['omnicontacts.contacts']
+    logger.info "@contacts: #{@contacts}\n\n\n"
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def import_contacts_callback
+
+  end
 end

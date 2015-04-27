@@ -2,13 +2,10 @@
 
   <%= form_for(@trip, url: update_when_path(@trip), method: :patch) do |f| %>
     <%= f.text_field :appointment %>
-
-
-
-      <div class="buttons">
-        <%= f.submit '', class: 'goForward' %>
-        <%= link_to "", where_path, class: 'goBack' %>
-      </div>
+    <div class="buttons">
+      <%= f.submit '', class: 'goForward' %>
+      <%= link_to "", where_path, class: 'goBack' %>
+    </div>
    <% end %>
 
 <script type="text/javascript" charset="utf-8">

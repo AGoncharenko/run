@@ -18,6 +18,8 @@ gem 'gmaps4rails', '~> 2.1.2'                         # Enables easy Google map 
 gem 'underscore-rails', '~> 1.7.0'                    # underscore.js asset pipeline provider/wrapper
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'jquery-datetimepicker-rails', '~> 2.4.1.0'
+gem "omnicontacts"
+# gem "koala", "~> 2.0"                                 # get facebook friends
 
 group :development, :test do
   gem 'web-console', '~> 2.0'                         # Access an IRB console on exception pages or by using <%= console %> in views

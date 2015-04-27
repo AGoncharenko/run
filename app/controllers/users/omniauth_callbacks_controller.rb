@@ -9,7 +9,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         :first_name => request.env["omniauth.auth"]["info"]["first_name"],
         :last_name => request.env["omniauth.auth"]["info"]["last_name"],
         :email => request.env["omniauth.auth"]["info"]["email"],
-        :type => request.env["omniauth.params"]["type"]
+        :type => request.env["omniauth.params"]["type"],
+        :credentials => request.env["omniauth.auth"]["credentials"]
     }.delete_if { |k, v| v.nil? }
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.find_for_facebook_oauth(facebook_info)
