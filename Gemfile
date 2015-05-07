@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'http://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -20,6 +20,7 @@ gem 'momentjs-rails', '~> 2.9.0'
 gem 'jquery-datetimepicker-rails', '~> 2.4.1.0'
 gem "omnicontacts"
 # gem "koala", "~> 2.0"                                 # get facebook friends
+gem "rails-assets-RRSSB"
 
 group :development, :test do
   gem 'web-console', '~> 2.0'                         # Access an IRB console on exception pages or by using <%= console %> in views

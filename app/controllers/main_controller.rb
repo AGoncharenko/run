@@ -55,6 +55,7 @@ class MainController < ApplicationController
   end
 
   def who
+    @trip = Trip.find_by(slug: params[:slug])
     # logger.info "session: #{session[:credentials]['token']}\n"
     # @graph = Koala::Facebook::API.new(session[:credentials]['token'])
     # logger.info "@friends: #{@graph.inspect}\n\n\n"

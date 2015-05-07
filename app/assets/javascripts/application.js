@@ -18,4 +18,5 @@
 //= require moment
 //= require bootstrap.min
 //= require jquery.datetimepicker
+//= require RRSSB
 //= require_tree .
